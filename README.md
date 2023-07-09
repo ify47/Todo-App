@@ -23,7 +23,7 @@ The project was built using:
 
 - Displays a Input Textarea
 - Light and Dark mode 
-- Drag and drop list
+- Drag and drop list ([Source of learning how to use](https://contactmentor.com/react-drag-drop-list/?expand_article=1)) 
 - checkbox for completed Todo
 - filtered buttons for active and completed todo
 - Delete icon available
