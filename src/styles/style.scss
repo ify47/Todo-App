@@ -1,0 +1,243 @@
+@use './common/mediaquery';
+@import "./common/variables";
+
+body {
+    margin: 0;
+}
+
+.app {
+    background-color: var(--backgound);
+    font-family: $font;
+    min-height: 100vh;
+    transition: 500ms;
+}
+
+.bgimg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    position: absolute;
+    
+}
+
+.mobilebgimg {
+    display: none;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    position: relative;
+    padding-top: 37px;
+    max-width: 563px;
+    margin: auto;
+    
+
+    .title {
+        color: white;
+        letter-spacing: 15px;
+    }
+}
+
+.inputs {
+    position: relative;
+    max-width: 562px;
+    margin: auto;
+    margin-top: 20px;
+
+    ul {
+        padding: 0;
+        border-radius: 5px;
+        overflow: auto;
+        box-shadow: var(--shadow);
+
+        li {
+            position: relative;
+            background-color: var(--card-background);
+            transition: 500ms;
+            list-style: none;
+            border-bottom: 1px solid var(--card-border-bottom);
+
+        }
+        li.hide-unchecked {
+            display: none;
+        }
+    }
+
+    .static-checkmark {
+        position: relative;
+        border: 17px solid var(--card-background);
+        border-radius: 5px;
+        background-color: var(--card-background);
+        transition: 500ms;
+
+        input {
+            position: relative;
+            background-color: var(--card-background);
+            border: none;
+            font-family: $font;
+            font-size: 18px;
+            padding-left: 50px;
+            color: var(--card-text);
+            transition: 500ms;
+
+            &::placeholder {
+                color: var(--placeholder);
+            }
+
+            &:focus {
+                outline: none;    
+            }
+        }
+
+        .checkmarks {
+            position: absolute;
+            left: 3px;
+            width: 20px;
+            height: 20px;
+            border: 1px solid var(--check-circle);
+            border-radius: 50%;
+        }
+    }
+
+    .checkbox-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        justify-content: space-between;
+        color: var(--card-text);
+        padding: 20px;
+        padding-left: 70px;
+        
+
+
+
+        input[type="checkbox"] {
+            opacity: 0;
+            position: absolute;
+            display: none;
+
+            &:checked~.checkmark {
+                background-color: $B_blue;
+                border: none;
+
+
+                &:after {
+                    display: block;
+                }
+            }
+
+            &:checked~.strike {
+                text-decoration: line-through;
+                color: var(--strike);
+                cursor: pointer;
+            }
+
+        }
+
+        .checkmark {
+            position: absolute;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border: 1px solid var(--check-circle);
+            border-radius: 50%;
+            margin-left: 20px;
+            cursor: pointer;
+
+            &:hover {
+                border: 1px solid $B_blue;
+            }
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+            left: 5px;
+            top: 5px;
+            width: 13px;
+            height: 13px;
+            background-image: url('../assets/icon-check.svg');
+            background-repeat: no-repeat;
+        }
+
+        .xbutton {
+            cursor: pointer;
+            opacity: 0;
+        }
+
+        .texts:hover {
+            cursor: pointer;
+
+
+            &:hover~.xbutton {
+                opacity: 1;
+            }
+        }
+
+
+
+    }
+
+    .details {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: var(--details);
+        font-size: 12px;
+        border: none;
+
+        .filter {
+            display: flex;
+            font-weight: 700;
+
+            p {
+                cursor: pointer;
+                margin-right: 15px;
+
+                &:hover {
+                    color: var(--details-hover);
+                }
+            }
+            
+
+
+            .active {
+                color: $B_blue;
+            }
+        }
+
+        
+
+        .filter, .clear p, .mobile-details p {
+            cursor: pointer;
+        }
+        
+        .clear p:hover {
+            color: var(--details-hover);
+        }
+
+    }
+
+   
+}
+
+ .mobile-details {
+    display: none;
+}
+
+.draginfo {
+    text-align: center;
+    color: var(--details);
+    margin-top: 50px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+
+
+    
