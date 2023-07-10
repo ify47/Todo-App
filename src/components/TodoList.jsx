@@ -7,7 +7,7 @@ export default function TodoList(props) {
   return (
     <Droppable droppableId="list-container">
       {(provided) => (
-        <div
+        <ul
           className="list-container"
           {...provided.droppableProps}
           ref={provided.innerRef}
@@ -25,7 +25,7 @@ export default function TodoList(props) {
                   {...provided.dragHandleProps}
                   {...provided.draggableProps}
                 >
-                  <label className="checkbox-container">
+                  <label className="checkbox-container" htmlFor="checkbox">
                     <input
                       type="checkbox"
                       checked={todo.checked}
@@ -38,7 +38,7 @@ export default function TodoList(props) {
                     <img
                       className="xbutton"
                       src={Xbutton}
-                      alt="Remove"
+                      alt="Remove Todo"
                       onClick={() => handleRemoveTodo(todo.id)}
                     />
                   </label>
@@ -47,7 +47,7 @@ export default function TodoList(props) {
             </Draggable>
           ))}
           {provided.placeholder}
-        </div>
+        </ul>
       )}
     </Droppable>
   );

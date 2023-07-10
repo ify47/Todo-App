@@ -64,7 +64,7 @@ const TodoAppPage = () => {
           </div>
         </form>
 
-        <ul>
+        <div>
           <DragDropContext onDragEnd={handleDrop}>
             <TodoList
               filteredTodos={filteredTodos}
@@ -81,7 +81,7 @@ const TodoAppPage = () => {
             handleComplete={handleComplete}
             clearComplete={clearComplete}
           />
-        </ul>
+        </div>
 
         <ul>
           <MobileList
