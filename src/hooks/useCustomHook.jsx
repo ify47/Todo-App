@@ -13,6 +13,7 @@ const reducer = (state, action) => {
     case "Typing":
       return { ...state, inputValue: action.value };
     case "Submitvalue":
+      if (state.inputValue === "") return state;
       const data = JSON.parse(localStorage.getItem("todo-data") || "[]");
       const newItem = {
         id: state.todos.length,
