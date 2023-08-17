@@ -25,9 +25,8 @@ export default function TodoList(props) {
                   {...provided.dragHandleProps}
                   {...provided.draggableProps}
                 >
-                  <label className="checkbox-container" htmlFor={todo.id}>
+                  <label className="checkbox-container">
                     <input
-                      id={todo.id}
                       type="checkbox"
                       checked={todo.checked}
                       onChange={() => handleCheckboxChange(todo.id)}

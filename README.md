@@ -8,7 +8,7 @@ The goal of the project was to create a todo webapp in which users can interact 
 
 ## Demo
 
-You can see a live demo of the project in the link area
+You can see a live demo of the project in the link area.
 
 ## Technologies Used
 
