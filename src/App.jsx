@@ -5,9 +5,9 @@ import TodoAppPage from "./pages/TodoAppPage";
 
 function App() {
   return (
-    <main>
+    <>
       <TodoAppPage />
-    </main>
+    </>
   );
 }
 

@@ -32,7 +32,7 @@ const TodoAppPage = () => {
   ] = useCustomHook();
 
   return (
-    <section className="app" data-theme={theme}>
+    <main className="app" data-theme={theme}>
       <img
         className="bgimg"
         src={theme === "dark" ? darkImage : lightImage}
@@ -51,7 +51,7 @@ const TodoAppPage = () => {
           alt=""
         />
       </header>
-      <div className="inputs">
+      <section className="inputs">
         <form onSubmit={handleSubmit}>
           <div className="static-checkmark">
             <input
@@ -92,9 +92,9 @@ const TodoAppPage = () => {
             handleComplete={handleComplete}
           />
         </ul>
-      </div>
+      </section>
       <p className="draginfo">Drag and drop to reorder list</p>
-    </section>
+    </main>
   );
 };
 
